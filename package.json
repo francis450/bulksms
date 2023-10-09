@@ -1,0 +1,19 @@
+{
+  "name": "bulksms",
+  "version": "1.0.0",
+  "description": "Application to send text messages to group members",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francis450/bulksms.git"
+  },
+  "author": "Group Members",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francis450/bulksms/issues"
+  },
+  "homepage": "https://github.com/francis450/bulksms#readme"
+}
