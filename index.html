@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sms bulk</title>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <img id="backgroundimg" src="https://cdn.pixabay.com/photo/2016/11/29/04/42/conifers-1867371_960_720.jpg">
+    <div class="main">
+        <div class="header">
+            
+            <div class="notifications"><b>+</b></div>
+            <div class="center">
+            <div>
+                <img class="pfp" src="https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_960_720.jpg">
+                <p id="pfpname">polymars</p>
+            </div>
+
+            </div>
+
+        </div>
+
+        <div class="content">
+            <div style="padding:11px;">
+                <p id="time"></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div style="width:100%;padding:11px;">
+                <select name="number" id="to" type="text" class="text-box recepient">
+                    <option>Phone</option>
+                </select>
+                <input placeholder="Message" class="text-box message" name="message">
+                <a type="button" class="send-ico sendSMS">
+                    <i style="position:absolute;" class="fas fa-paper-plane "></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="popup" class="popup">
+        <p style="text-align: center;">Add Group Member </p>
+        <hr>
+        <div class="popup-content">
+            <label for="name">
+                <input type="text" name="name" id="name">
+                Name
+            </label>
+            <label for="Phone">
+                <input type="tel" name="tel" id="tel" placeholder="254757185189">
+                Phone Number
+            </label>
+            <br>
+            <button type="submit" class="submit">ADD</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/index.js"></script>
+</body>
+</html>
+
