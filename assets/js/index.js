@@ -126,37 +126,41 @@
         }
     }
     $(document).ready(function () {
-            // Event handler for the "ADD" button
-            $(".submit").on("click", function (e) {
-                e.preventDefault(); // Prevent the form from submitting
+        // Event handler for the "ADD" button
+        $(".submit").on("click", function (e) {
+            e.preventDefault(); 
+            var name = $("#name").val();
+            var tel = $("#tel").val();
 
-                // Get the values of the input fields
-                var name = $("#name").val();
-                var tel = $("#tel").val();
 
-                // Validate the input (e.g., check if they are not empty)
-                if (name === "" || tel === "") {
-                    alert("Please fill in all fields");
-                    return;
-                }
+            if (name === "" || tel === "") {
+                alert("Please fill in all fields");
+                return;
+            }
 
-                // Validate the phone number format
-                var telPattern = /^\d{12}$/; // 12 digits
-                if (!tel.match(telPattern)) {
-                    alert("Please enter a valid phone number (e.g., 254757185189).");
-                    return;
-                }
-
-                // Create a new element to display the data
-                var resultDiv = $("<div></div>");
-                resultDiv.append("<p>Name: " + name + "</p>");
-                resultDiv.append("<p>Phone Number: " + tel + "</p>");
-
-                // Append the result to the document
-                $(".popup-content").append(resultDiv);
-
-                // Clear the input fields
-                $("#name").val("");
-                $("#tel").val("");
+            var telPattern = /^\d{12}$/;
+            if (!tel.match(telPattern)) {
+                alert("Please enter a valid phone number (e.g., 254757185189).");
+                return;
+            }
+            $.ajax({
+                url: "src/members/store.php",
+                data: {
+                    name: name,
+                    tel: tel
+                },
+                error: function() {
+                    alert(name+" Not Added");
+                },
+                success: function(data) {
+                    console.log(data);
+                    if(data == 'Success'){
+                        alert(name+" Added");
+                    }else{
+                        alert(name+" Not Added");
+                    }                    
+                },
+                type: "POST"
             });
         });
+    });
