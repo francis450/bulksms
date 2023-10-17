@@ -75,7 +75,7 @@
       // $('#time').text(formattedTime);
       return formattedTime;
     }
-    
+
 })
 
     const notifications = document.querySelector('.notifications');
@@ -125,4 +125,38 @@
             selectElement.appendChild(option);
         }
     }
-    
+    $(document).ready(function () {
+            // Event handler for the "ADD" button
+            $(".submit").on("click", function (e) {
+                e.preventDefault(); // Prevent the form from submitting
+
+                // Get the values of the input fields
+                var name = $("#name").val();
+                var tel = $("#tel").val();
+
+                // Validate the input (e.g., check if they are not empty)
+                if (name === "" || tel === "") {
+                    alert("Please fill in all fields");
+                    return;
+                }
+
+                // Validate the phone number format
+                var telPattern = /^\d{12}$/; // 12 digits
+                if (!tel.match(telPattern)) {
+                    alert("Please enter a valid phone number (e.g., 254757185189).");
+                    return;
+                }
+
+                // Create a new element to display the data
+                var resultDiv = $("<div></div>");
+                resultDiv.append("<p>Name: " + name + "</p>");
+                resultDiv.append("<p>Phone Number: " + tel + "</p>");
+
+                // Append the result to the document
+                $(".popup-content").append(resultDiv);
+
+                // Clear the input fields
+                $("#name").val("");
+                $("#tel").val("");
+            });
+        });
