@@ -19,10 +19,16 @@ use Infobip\Model\SmsTextualMessage;
 
 $BASE_URL = "https://vvvzee.api.infobip.com";
 $API_KEY = "f4d232121357c1f9df03c2f63c6a50a6-0cde7c75-8ba3-4f51-a3d8-29d23b00f35f";
+$RECIPIENT;
+$SENDER;
+$MESSAGE_TEXT;
+if(isset($_POST['message']) && isset($_POST['recepient'])){
+    $SENDER = "InfoSMS";
+    // "254757185189";
+    $RECIPIENT = $_POST['recepient'];
+    $MESSAGE_TEXT = $_POST['message'];
+}
 
-$SENDER = "InfoSMS";
-$RECIPIENT = "254757185189";
-$MESSAGE_TEXT = "This is a sample message";
 
 $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
 
